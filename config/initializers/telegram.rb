@@ -1,5 +1,6 @@
+# token = Rails.application.credentials[RAILS_ENV][:telegram][:bot][:token] || TELEGRAM_BOT_TOKEN
 Telegram.bots_config = {
-  default: Rails.application.credentials[:development][:telegram][:bot][:token],
+  default: Rails.application.credentials[Rails.env.to_sym][:telegram][:default]
   # chat: {token: CHAT_BOT_TOKEN, username: 'chatbot'},
 }
 

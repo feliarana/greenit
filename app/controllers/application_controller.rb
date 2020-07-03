@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  def holis
-    puts 'holis'
+  def webhook
   end
 end
