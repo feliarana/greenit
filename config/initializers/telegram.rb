@@ -4,7 +4,7 @@ Telegram.bots_config = {
   # chat: {token: CHAT_BOT_TOKEN, username: 'chatbot'},
 }
 
-Telegram.bot.get_updates
+# Telegram.bot.get_updates
 Telegram.bot == Telegram.bots[:default] # true
 # Telegram.bots[:default].send_message('HELLO WORLD!')
 # Telegram.bot.get_meTelegram.bots[:default]].send_message('HELLO WORLD!')
