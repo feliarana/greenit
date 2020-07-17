@@ -5,8 +5,9 @@ ruby '2.6.6'
 
 gem 'devise'
 
-# bot telegram official
-gem 'telegram-bot'
+# bot telegram
+# gem 'telegram-bot'
+gem 'telegram-bot-ruby'
 
 # postgres
 gem 'pg'
