@@ -6,11 +6,15 @@ ruby '2.6.6'
 gem 'devise'
 
 # bot telegram
-# gem 'telegram-bot'
 gem 'telegram-bot-ruby'
 
 # postgres
 gem 'pg'
+
+# activeadmin
+gem 'activeadmin'
+# activeadmin responsive
+gem 'arctic_admin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
