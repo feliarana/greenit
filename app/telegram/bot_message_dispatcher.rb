@@ -16,19 +16,19 @@ class BotMessageDispatcher
         unknown_command
       end
     else
-      start_command = BotCommand::Start.new(user, message)
+      # start_command = BotCommand::Start.new(user, message)
 
-      if start_command.should_start?
-        start_command.start
-      else
-        unknown_command
-      end
+      # if start_command.should_start?
+      #   start_command.start
+      # else
+      #   unknown_command
+      # end
     end
   end
 
   private
 
   def unknown_command
-    BotCommand::Undefined.new(user, message).start
+    # BotCommand::Undefined.new(user, message).start
   end
 end
