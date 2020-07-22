@@ -8,18 +8,42 @@ Response time is also reduced and we save some CPU cyles.
 Setting a webhook means Telegram a location in the form of a URL, on which our bot listens for updates.
 We need to be able to connect and post updates to that URL.
 
+
+Requirements:
+
 * Ruby version: 2.6.6
+
+* Postgresql (Version > 9.0)
 
 * Configuration
 
-* Database creation
+* Database creation. First, you'll need to edit credentials:
+
+1) Edit credentials from terminal:
+
+`
+rails credentials:edit --environment development
+`
+
+2)
+
+`
+development:
+  bot_token: BOT_TOKEN_FROM_TELEGRAM
+  database:
+    host: localhost
+    name: greenit_workspace
+    username: your_postgres_username
+    password: your_postgres_password
+`
+
+3) Run this command to execute db setup: this will create the database (if does't exits), run migrations (database tables).
 
 - rake db:setup
 
-* Database initialization
-
-- rake db:migrate
-- rake db:seed
+Default user to enter:
+user: a@a.com
+password: 123456
 
 Sources.
 

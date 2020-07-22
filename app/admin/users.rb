@@ -24,15 +24,13 @@ ActiveAdmin.register User do
     end
     f.actions
   end
- controller do
+
+  controller do
     def create
-      # Good
       @user = User.new(params[:user].permit!)
       @user.company = Company.last
       @user.telegram_id = rand(1..9999)
       @user.save
-        # ...
-      # end
     end
   end
 end
