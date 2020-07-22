@@ -1,0 +1,26 @@
+
+
+A -- comunicacion con cliente
+
+
+	1 - Usuario registrarse con telegram
+		+ Recibir el un codigo que representa la empresa a la que trabaja.
+	
+	2 -  Preguntas por defecto: 
+		¿Que computadora usaste hoy? (notebook o pc de escritorio)
+		¿ Cuántas horas trabajaste?  
+		¿ Cuántas veces usaste la pava eléctrica?
+		¿ Cuántas veces usaste el microondas?
+		¿ Tu computadora quedó ayer prendida? ( 13 hs horas más de consumo en estado ocioso).
+		Ayer, ¿ Apagaste el monitor antes de irte?
+
+	3- Agregar preguntas a la compañia por defecto en el archivo seed
+	
+B -- Calculo de la Huella de Carbono	
+
+C -- administrar las preguntas
+
+
+D -- administar los admitradores por compañia
+
+
