@@ -43,3 +43,5 @@ yarn-debug.log*
 /config/credentials/environment.key
 
 /config/credentials/development.key
+
+.idea

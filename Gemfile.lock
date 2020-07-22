@@ -298,6 +298,7 @@ GEM
       equalizer (~> 0.0, >= 0.0.9)
     warden (1.2.8)
       rack (>= 2.0.6)
+    wdm (0.1.1)
     web-console (4.0.4)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -321,6 +322,7 @@ GEM
 PLATFORMS
   ruby
   x64-mingw32
+  x86-mswin32
 
 DEPENDENCIES
   activeadmin
