@@ -1,6 +1,10 @@
 ---
 es:
   activerecord:
+    models:
+      user:
+        one: "Usuario"
+        other: "Usuarios"
     errors:
       messages:
         record_invalid: 'La validación falló: %{errors}'
