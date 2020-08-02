@@ -23,4 +23,8 @@ class User < ApplicationRecord
     self.bot_command_data = {}
     save
   end
+
+  def display_name
+    self.email
+  end
 end

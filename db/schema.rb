@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_07_20_005058) do
 
   create_table "answers", force: :cascade do |t|
     t.string "text"
-    t.string "awnser_kind"
+    t.string "answer_kind"
     t.bigint "question_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_07_20_005058) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "address"
+    t.string "key"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
