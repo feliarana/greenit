@@ -17,7 +17,8 @@ Requirements:
 
 * Configuration
 
-* Database creation. First, you'll need to edit credentials:
+
+Database creation. First, you'll need to edit credentials:
 
 1) Edit credentials from terminal:
 
@@ -45,7 +46,15 @@ Default user to enter:
 user: a@a.com
 password: 123456
 
+4) Add the bot. You can search it from telegram mobile (or web) contact search like this:
+file:///home/feliarana/Pictures/Screenshot%20from%202020-08-03%2012-08-00.png
+
+5) Bot commands:
+/start
+/pass companypass
+
 Sources.
 
 https://web.archive.org/web/20150826052314/http://progrium.com/blog/2007/05/03/web-hooks-to-revolutionize-the-web/
+
 https://es.slideshare.net/ChrisDowney8/integrating-telegram-bots-with-ruby-on-rails?from_action=save
