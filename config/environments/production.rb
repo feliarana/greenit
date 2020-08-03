@@ -61,6 +61,28 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "greenit_production"
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'officegreenit.herokuapp.com' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    user_name: Rails.application.credentials.production[:mailer][:username],
+    password: Rails.application.credentials.production[:mailer][:password],
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
+
+  # Exception notification
+  Rails.application.configure do
+    config.middleware.use ExceptionNotification::Rack,
+                          email: {
+                            email_prefix: '[ERROR OfficeGreenIt]',
+                            sender_address: 'Error OfficeGreenIt <noreply@officegreenit.herokuapp.com>',
+                            exception_recipients: Rails.application.credentials.development[:mailer][:username]
+                          }
+  end
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -109,4 +131,5 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
 end
