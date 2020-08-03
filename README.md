@@ -47,7 +47,7 @@ user: a@a.com
 password: 123456
 
 4) Add the bot. You can search it from telegram mobile (or web) contact search like this:
-![](https://drive.google.com/file/d/1ipwwoQUF0ndTRV6PcMmvzYDXgoPBK6R6/view?usp=sharing)
+![image](https://drive.google.com/uc?export=view&id=1ipwwoQUF0ndTRV6PcMmvzYDXgoPBK6R6)
 
 5) Bot commands:
 /start
