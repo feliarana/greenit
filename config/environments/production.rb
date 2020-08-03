@@ -80,7 +80,7 @@ Rails.application.configure do
                           email: {
                             email_prefix: '[ERROR OfficeGreenIt]',
                             sender_address: 'Error OfficeGreenIt <noreply@officegreenit.herokuapp.com>',
-                            exception_recipients: Rails.application.credentials.development[:mailer][:username]
+                            exception_recipients: Rails.application.credentials.production[:mailer][:username]
                           }
   end
 
