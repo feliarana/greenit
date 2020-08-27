@@ -24,5 +24,11 @@ Contraseña de compañia inválida. Por favor, ingrese nuevamente /pass keydetuc
       send_message('Estas son las preguntas para responder en el dia de hoy...........'+questions
       )
     end
+
+    def send_question#(user)
+      # questions = user.company.quizzes.last.questions.map(&:factor).map(&:name).join("\n")
+      send_query('Estas son las preguntas para responder en el dia de hoy...........'
+      )
+    end
   end
 end

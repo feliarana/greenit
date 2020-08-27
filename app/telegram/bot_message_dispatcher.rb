@@ -51,7 +51,7 @@ class BotMessageDispatcher
     if company_pass.present? && company.present?
       register_user(company)
     else
-      start_command.invalid_key
+      start_command.send_question
     end
   end
 

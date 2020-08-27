@@ -25,6 +25,10 @@ module BotCommand
       @api.call('sendMessage', chat_id: @user.telegram_id, text: text)
     end
 
+    def send_query(question, options = {})
+      @api.call('inlinequery', chat_id: @user.telegram_id, query: text)
+    end
+
     def text
       @message[:text]
     end
