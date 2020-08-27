@@ -5,7 +5,7 @@ ActiveAdmin.register Question do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :quiz_id
+  permit_params :quiz_id, :factor_id, :visible
   #
   # or
   #

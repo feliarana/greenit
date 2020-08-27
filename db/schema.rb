@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_20_005058) do
+ActiveRecord::Schema.define(version: 2020_08_07_001324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,11 +34,22 @@ ActiveRecord::Schema.define(version: 2020_07_20_005058) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "questions", force: :cascade do |t|
+  create_table "factors", force: :cascade do |t|
     t.string "name"
-    t.bigint "quiz_id"
+    t.string "emission_source"
+    t.float "emission_factor"
+    t.float "consumption"
+    t.string "unit_meassure"
+    t.float "emission_per_hour"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.bigint "quiz_id", null: false
+    t.bigint "factor_id", null: false
+    t.boolean "visible", default: true
+    t.index ["factor_id"], name: "index_questions_on_factor_id"
     t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
 
@@ -74,4 +85,6 @@ ActiveRecord::Schema.define(version: 2020_07_20_005058) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "questions", "factors"
+  add_foreign_key "questions", "quizzes"
 end

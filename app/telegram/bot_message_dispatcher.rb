@@ -14,8 +14,6 @@ class BotMessageDispatcher
 
     start_command = BotCommand::Start.new(user, message)
 
-    return start_command.daily_questions(user)
-
     if user.get_next_bot_command
       bot_command = user.get_next_bot_command.safe_constantize.new(user, message)
 
@@ -26,7 +24,7 @@ class BotMessageDispatcher
       end
     else
       if start_command.should_start?
-        start_command.start
+        start_command.daily_questions(user)
       else
         unknown_command
       end

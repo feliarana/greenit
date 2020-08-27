@@ -8,9 +8,28 @@
 Company.create!(name: 'company test 1', address: '47 867', key: 123) #if Rails.env.development?
 User.create!(email: 'a@a.com', password: '123456', password_confirmation: '123456', company: Company.last)
 Quiz.create!(name: 'Cuestionario test 1', company: Company.last)
-Question.create!(quiz: Quiz.last, name: '¿Que computadoras usaste hoy (notebook o pc)?')
-Question.create!(quiz: Quiz.last, name: '¿Cuantas horas la estuviste en uso (pantalla encendida)?')
-Question.create!(quiz: Quiz.last, name: '¿Cuantas veces usaste la pava eléctrica?')
-Question.create!(quiz: Quiz.last, name: '¿Cuantas veces usaste el microondas?')
-Question.create!(quiz: Quiz.last, name: '¿Tu computadora quedó prendida en el día de ayer?')
-Question.create!(quiz: Quiz.last, name: 'En el dia de ayer, ¿Apagaste el monitor antes de irte?')
+Factor.create!(name: '¿Que computadoras usaste hoy (notebook o pc)?')
+Factor.create!(name: '¿Cuantas horas la estuviste en uso (pantalla encendida)?',
+                 emission_source: 'generica', emission_factor: '0.412', unit_meassure: 'KwH',
+                 emission_per_hour: 0.29664, consumption: 0.72)
+Factor.create!(name: '¿Cuantas horas la estuviste en uso (pantalla encendida)?',
+                 emission_source: 'portatil', emission_factor: '0.412', unit_meassure: 'KwH',
+                 emission_per_hour: 0.009, consumption: 0.022)
+Factor.create!(name: '¿Cuantas veces usaste la pava eléctrica?',
+                 emission_source: 'pava electrica', emission_factor: '0.022', unit_meassure: 'KwH',
+                 emission_per_hour: 0.824, consumption: 2)
+Factor.create!(name: '¿Cuantas veces usaste el microondas?',
+                 emission_source: 'pava electrica', emission_factor: '0.412', unit_meassure: 'KwH',
+                 emission_per_hour: 0.26368, consumption: 0.64)
+Factor.create!(name: '¿Cuantas veces usaste el microondas?',
+                 emission_source: 'pava electrica', emission_factor: '0.412', unit_meassure: 'KwH',
+                 emission_per_hour: 0.26368, consumption: 0.64)
+# Question.create!(quiz: Quiz.last, name: '¿Tu computadora quedó prendida en el día de ayer?')
+Factor.create!(name: '¿Cuantas hojas A4 imprimiste en el dia de hoy?',
+                 emission_source: 'a4', emission_factor: '1,320', unit_meassure: 'KG',
+                 emission_per_hour: 0.006072, consumption: 2.3)
+Factor.create!(name: '¿Cuantas hojas Oficio imprimiste en el dia de hoy?',
+                 emission_source: 'oficio', emission_factor: '1,320', unit_meassure: 'KG',
+                 emission_per_hour: 0.007392, consumption: 2.3)
+Question.create!(quiz: Quiz.last, factor: Factor.last)
+Answer.create!(text: '30', question: Question.last, user: User.last)
