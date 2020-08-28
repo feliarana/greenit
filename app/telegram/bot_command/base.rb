@@ -26,10 +26,10 @@ module BotCommand
     end
 
     def send_inline_options(text, options)
-      answers =
+      questions =
         Telegram::Bot::Types::ReplyKeyboardMarkup
         .new(keyboard: options, one_time_keyboard: true) # .new(keyboard: [%w(A B), %w(C D)], one_time_keyboard: true)
-      @api.send_message(chat_id: from[:id], text: text, reply_markup: answers)
+      @api.send_message(chat_id: from[:id], text: text, reply_markup: questions)
     end
 
     def telegram_id

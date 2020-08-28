@@ -4,6 +4,6 @@ class Quiz < ApplicationRecord
   has_many :factors, through: :questions
 
   def public_questions
-    questions.map(&:factor).map(&:name).split(',') if questions.any?
+    questions.map(&:factor).map(&:name).map { |question| [question] }
   end
 end

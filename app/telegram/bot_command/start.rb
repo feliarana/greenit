@@ -48,11 +48,11 @@ Para ingresar a los questionarios, ingresa la contraseña de tu compañia: /pass
 
     def register_user(company)
       fake_email = from[:id].to_s + '@officegreenit.com'
-      user = User.find_or_initialize_by(telegram_id: from[:id], email: fake_email, company: company) do |new_user|
+      @user = User.find_or_initialize_by(telegram_id: from[:id], email: fake_email, company: company) do |new_user|
         new_user.password = '123456'
       end
 
-      user.update_attributes!(first_name: from[:first_name], last_name: from[:last_name])
+      @user.update_attributes!(first_name: from[:first_name], last_name: from[:last_name])
     end
 
     def invalid_key
