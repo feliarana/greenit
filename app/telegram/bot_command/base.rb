@@ -4,7 +4,7 @@ module BotCommand
   class Base
     attr_reader :user, :message, :api
 
-    def initialize(user, message)
+    def initialize(message, user = nil)
       @user = user
       @message = message
       token = Rails.application.credentials[Rails.env.to_sym][:bot_token]
@@ -21,12 +21,19 @@ module BotCommand
 
     protected
 
-    def send_message(text, options={})
-      @api.call('sendMessage', chat_id: @user.telegram_id, text: text)
+    def send_message(text, _options = {})
+      @api.call('sendMessage', chat_id: telegram_id, text: text)
     end
 
-    def send_query(question, options = {})
-      @api.call('inlinequery', chat_id: @user.telegram_id, query: text)
+    def send_inline_options(text, options)
+      answers =
+        Telegram::Bot::Types::ReplyKeyboardMarkup
+        .new(keyboard: options, one_time_keyboard: true) # .new(keyboard: [%w(A B), %w(C D)], one_time_keyboard: true)
+      @api.send_message(chat_id: from[:id], text: text, reply_markup: answers)
+    end
+
+    def telegram_id
+      @user.present? ? @user.telegram_id : from[:id]
     end
 
     def text

@@ -19,6 +19,15 @@ class User < ApplicationRecord
     bot_command_data['command']
   end
 
+  def set_question_id_to_answer(id)
+    self.bot_command_data['question_id'] = id
+    save
+  end
+
+  def get_question_id_to_answer
+    bot_command_data['question_id']
+  end
+
   def reset_next_bot_command
     self.bot_command_data = {}
     save
