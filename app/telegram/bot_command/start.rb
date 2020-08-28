@@ -5,7 +5,7 @@ module BotCommand
     end
 
     def should_welcome?
-      text =~ /\A\/inicio/
+      text =~ /\A\/start/
     end
 
     def should_start?
@@ -22,8 +22,8 @@ module BotCommand
 
     def start_message
       send_message('
-Bienvenido! Soy el bot realizado para la materia GreenIT.
-Para ingresar a los questionarios, ingresa la contraseña de tu compañia: /pass keydetucompañia')
+Bienvenido! Soy el bot de la materia GreenIT, realizado por Joaquin Islas y Felipe Arana.
+Para ingresar a los cuestionarios, ingresa la contraseña de tu compañia: /pass keydetucompañia')
       # user.reset_next_bot_command
       # user.set_next_bot_command('BotCommand::Start')
     end

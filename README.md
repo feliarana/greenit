@@ -50,7 +50,7 @@ password: 123456
 ![image](https://drive.google.com/uc?export=view&id=1ipwwoQUF0ndTRV6PcMmvzYDXgoPBK6R6)
 
 5) Bot commands:
-/inicio - Start dialog.
+/start - Start dialog.
 /pass - Company password needed in order to register a user (Asked one time only).
 /cancelar - Repeat questions, can do in any instance of the bot dialog (as long as the user is registered)
 /estadisticas - View daily and general user statistics.

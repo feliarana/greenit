@@ -1,7 +1,7 @@
 module BotCommand
   class Undefined < Base
     def unknown_public_command
-      send_message('Comando desconocido. Escriba /inicio para iniciar la conexion con tu compañia.')
+      send_message('Comando desconocido. Escriba /start para iniciar la conexion con tu compañia.')
     end
 
     def unknown_command
