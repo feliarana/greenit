@@ -13,7 +13,7 @@ Factor.create!(name: '¿Cuantas horas utilizaste tu notebook?',
                emission_per_hour: 0.29664, consumption: 0.72)
 Factor.create!(name: '¿Cuantas horas utilizaste tu PC?',
                emission_source: 'generica', emission_factor: '0.412', unit_meassure: 'KwH',
-               emission_per_hour: 0.009, consumption: 0.72)
+               emission_per_hour: 0.009, consumption: 0.022)
 
 Factor.create!(name: '¿Cuantas veces usaste la pava eléctrica?',
                emission_source: 'pava electrica', emission_factor: '0.022', unit_meassure: 'KwH',
