@@ -10,7 +10,9 @@ module BotCommand
       answer = ::Answer.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
                        .find_or_create_by(user: user, question_id: user.get_question_id_to_answer)
       answer.update(text: text)
-      send_message('Respuesta del dia de hoy guardada correctamente. Escriba /preguntas para ver las restantes')
+      send_message("Respuesta del dia de hoy guardada correctamente.\n
+        Escriba /preguntas para ver las restantes. \n
+        Escriba /estadisticas para tus estadísticas. ")
       user.reset_next_bot_command
       user.set_next_bot_command('BotCommand::Question')
     end
