@@ -23,7 +23,7 @@ Factor.create!(name: '¿Cuantas veces usaste el microondas?',
                emission_source: 'pava electrica', emission_factor: '0.412', unit_meassure: 'KwH',
                emission_per_hour: 0.26368, consumption: 0.64)
 
-Factor.create!(name: '¿Cuantas horas la estuviste en uso (pantalla encendida)?',
+Factor.create!(name: '¿Cuantas horas estuvo prendida la pantalla de la computadora?',
                emission_source: 'portatil', emission_factor: '0.412', unit_meassure: 'KwH',
                emission_per_hour: 0.009, consumption: 0.022)
 
